@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  marvelheroes:
+    image: marvelheroes
+    build:
+      context: ./MarvelHeroes
+      dockerfile: Dockerfile
+
+  marvelheroes.webapp:
+    image: marvelheroes.webapp
+    build:
+      context: ./MarvelHeroes.WebApp
+      dockerfile: Dockerfile

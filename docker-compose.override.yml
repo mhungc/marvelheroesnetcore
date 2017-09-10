@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  marvelheroes:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  marvelheroes.webapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
