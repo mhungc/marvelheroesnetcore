@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MarvelHeroes.Domain\MarvelHeroes.Domain.csproj" />
+    <ProjectReference Include="..\MarvelHeroes.Infrastructure\MarvelHeroes.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
