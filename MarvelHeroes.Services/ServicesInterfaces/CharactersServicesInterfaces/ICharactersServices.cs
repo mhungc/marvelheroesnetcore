@@ -8,6 +8,6 @@ namespace MarvelHeroes.Services.ServicesInterfaces.CharactersServicesInterfaces
 {
     public interface ICharactersServices
     {
-        Task<List<CharacterDataWrapper>> GetMarvelCharacters();
+        Task<CharacterDataWrapper> GetMarvelCharacters();
     }
 }

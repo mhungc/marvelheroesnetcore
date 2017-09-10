@@ -20,7 +20,7 @@ namespace MarvelHeroes.Services.ServicesImplementations.CharactersServicesImplem
             _config = config;
         }
 
-        public async Task<List<CharacterDataWrapper>> GetMarvelCharacters()
+        public async Task<CharacterDataWrapper> GetMarvelCharacters()
         {
             using (var client = new HttpClient())
             {
@@ -33,15 +33,15 @@ namespace MarvelHeroes.Services.ServicesImplementations.CharactersServicesImplem
                 string hash = GerarHash(ts, publicKey,
                     _config.PrivateKey);
 
-                var serializer = new DataContractJsonSerializer(typeof(List<CharacterDataWrapper>));
+                var serializer = new DataContractJsonSerializer(typeof(CharacterDataWrapper));
 
                 var streamCharacters = client.GetStreamAsync(
                     _config.BaseURL +
                     $"characters?limit=10&offset=5&ts={ts}&apikey={publicKey}&hash={hash}");
 
-                var response = serializer.ReadObject(await streamCharacters) as List<CharacterDataWrapper>;
+                var response = serializer.ReadObject(await streamCharacters) as CharacterDataWrapper;
 
-                return response;
+                    return response;
             }
 
 

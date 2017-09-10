@@ -27,7 +27,7 @@ namespace MarvelHeroes.XUnitTest
             var characters = new CharactersServices(_marvelHeroesConfigurationMock);
             var charactersTesting = await characters.GetMarvelCharacters();
             
-            Assert.True(charactersTesting.Count > 0);
+            Assert.True(charactersTesting.data.results.Count > 0);
         }
     }
 }
